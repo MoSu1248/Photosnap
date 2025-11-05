@@ -1,0 +1,17 @@
+@use "../../styles/mixins" as *;
+
+.button_2 {
+  @include button-2();
+}
+
+.btn-img {
+  width: 25%;
+  color: white;
+
+  svg {
+    color: white;
+
+    fill: white;
+    stroke: white;
+  }
+}

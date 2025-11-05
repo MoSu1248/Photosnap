@@ -1,0 +1,60 @@
+/* Resuable Variables */
+
+/* ROOT VARIABLES */
+
+:root {
+  /* Colors */
+
+  --primary-main-accent: linear-gradient(135deg, #ffc593, #bc7198, #5a77ff);
+  --primary-main-accent-softer: linear-gradient(
+    120deg,
+    #ffc593 0%,
+    #bc7198 45%,
+    #5a77ff 100%
+  );
+
+  --primary-black: #000000;
+  --primary-light-grey: #dfdfdf;
+  --primary-pure-white: #ffffff;
+  --primary-hover-grey: #dfdfdf62;
+
+  /* Typography */
+
+  --default-font: "DM Sans", sans-serif;
+
+  /* Font Sizing */
+
+  --h1-font-size: 40px;
+  --h2-font-size: 24px;
+  --h3-font-size: 18px;
+  --h4-font-size: 12px;
+  --body-font-size: 15px;
+
+  /* Font Weights */
+
+  --font-weight-bold: bold;
+  --font-weight-regular: 300;
+
+  /* Line Heights */
+
+  --h1-line-height: 48px;
+  --h2-line-height: 25px;
+  --h3-line-height: 25px;
+  --h4-line-height: 16px;
+  --body-line-height: 25px;
+
+  /* Letter Spacing */
+
+  --h1-letter-space: 4.17px;
+  --h2-letter-space: 0px;
+  --h3-letter-space: 0px;
+  --h4-letter-space: 2px;
+  --body-letter-space: 0px;
+}
+
+/* SCSS VARIABLES  */
+
+/* Breakpoints */
+$bp-mobile: 40.625em; // 600px
+$bp-tablet: 56.25em; // 900px
+$bp-desktop: 75em; // 1200px

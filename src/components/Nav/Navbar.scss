@@ -1,0 +1,28 @@
+@use "../../styles/mixins" as *;
+
+.nav__bar {
+  .nav__list {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    height: 100%;
+
+    .nav__item {
+      list-style: none;
+    }
+  }
+
+  .nav__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    @include h4-styling();
+    transition: 0.3s ease-out;
+    &:hover {
+      color: var(--primary-light-grey);
+    }
+  }
+
+  .link-home{
+    display: none;
+  }
+}

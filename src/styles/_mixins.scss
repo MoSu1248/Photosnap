@@ -1,0 +1,91 @@
+@use "./variables" as vars;
+
+@mixin h1-styling($color: var(--primary-black)) {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--h1-line-height);
+  letter-spacing: var(--h1-letter-space);
+  color: $color;
+}
+
+@mixin h2-styling($color: var(--primary-black)) {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--h2-line-height);
+  letter-spacing: var(--h2-letter-space);
+  color: $color;
+}
+
+@mixin h3-styling($color: var(--primary-black)) {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--h3-line-height);
+  letter-spacing: var(--h3-letter-space);
+  color: $color;
+}
+
+@mixin h4-styling($color: var(--primary-black)) {
+  font-size: var(--h4-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--h4-line-height);
+  letter-spacing: var(--h4-letter-space);
+  color: $color;
+}
+
+@mixin body-styling($color: var(--primary-black)) {
+  font-size: var(--body-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--body-line-height);
+  letter-spacing: var(--body-letter-space);
+  color: $color;
+}
+
+@mixin button-1(
+  $color: var(--primary-pure-white),
+  $backColor: var(--primary-black),
+  $hoverColor: var(--primary-black),
+  $hoverBackColor: var(--primary-light-grey)
+) {
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: $backColor;
+  color: $color;
+  font-family: var(--default-font);
+  transition: 0.3s ease;
+  border: none;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+
+  &:hover {
+    background-color: $hoverBackColor;
+    color: $hoverColor;
+  }
+}
+
+@mixin button-2(
+  $color: var(--primary-pure-white),
+  $hoverColor: var(--primary-black)
+) {
+  text-transform: uppercase;
+  background-color: transparent;
+  color: $color;
+  border: none;
+  transition: 0.3s ease;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--default-font);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0rem;
+
+  p {
+    @include h4-styling(var(--primary-pure-white));
+  }
+
+  &:hover {
+    p {
+      text-decoration: underline;
+    }
+  }
+}
