@@ -1,0 +1,47 @@
+@use "../../styles/mixins" as *;
+
+.features {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rem;
+  height: 60vh;
+  gap: 3rem 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.features__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+
+  .features__img {
+    height: 4rem;
+  }
+
+  .featured-1 {
+    padding: 0.5rem;
+  }
+
+  .features__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 80%;
+
+    .features__title {
+      @include h3-styling;
+    }
+
+    .features__text {
+      @include body-styling;
+      max-width: 90%;
+    }
+  }
+}

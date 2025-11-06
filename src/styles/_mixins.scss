@@ -34,7 +34,7 @@
 
 @mixin body-styling($color: var(--primary-black)) {
   font-size: var(--body-font-size);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-regular);
   line-height: var(--body-line-height);
   letter-spacing: var(--body-letter-space);
   color: $color;

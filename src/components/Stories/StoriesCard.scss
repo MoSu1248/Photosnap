@@ -1,0 +1,75 @@
+@use "../../styles/mixins" as *;
+
+.cards {
+  display: grid;
+  height: 65vh;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.card {
+  position: relative;
+  color: var(--primary-pure-white);
+  cursor: pointer;
+
+  .card__img {
+    position: absolute;
+    z-index: -1;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card__overlay {
+    content: "";
+    position: absolute; /* must be positioned for z-index to work */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff00 0%, #14141498 100%);
+    z-index: 0; /* now sits on top */
+  }
+
+  .card__content {
+    height: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .card__text {
+    z-index: 2;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    .card__text-title {
+      @include h3-styling(var(--primary-pure-white));
+    }
+
+    .card__text-name {
+      @include h4-styling(var(--primary-pure-white));
+      font-weight: 300;
+    }
+
+    .card__text-date {
+      @include h4-styling(var(--primary-pure-white));
+      font-weight: 300;
+    }
+  }
+
+  .button_2 {
+    z-index: 2;
+    border-top: 1px solid var(--primary-hover-grey);
+    &:hover {
+      p {
+        text-decoration: none;
+      }
+    }
+  }
+}
