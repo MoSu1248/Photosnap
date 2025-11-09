@@ -9,11 +9,18 @@
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 60%;
   }
 
   .home-section {
-    width: 60%;
     background-image: url(../../assets/home/desktop/create-and-share.jpg);
+  }
+
+  .features-section {
+    background-image: url(../../assets/features/desktop/hero.jpg);
+  }
+  .pricing-section {
+    background-image: url(../../assets/pricing/desktop/hero.jpg);
   }
 }
 

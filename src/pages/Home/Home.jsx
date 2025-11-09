@@ -11,7 +11,13 @@ import FeaturesData from "../../data/Features";
 export default function Home() {
   return (
     <div className="home">
-      <Hero background={"home"} />
+      <Hero
+        background={"home"}
+        title={"Create and share your photo stories."}
+        text={
+          "Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
+        }
+      />
       <HighlightSection
         text={
           "We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone."

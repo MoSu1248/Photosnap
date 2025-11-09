@@ -31,9 +31,7 @@ export default function Footer() {
             {socialIcons.map((link) => (
               <li key={link.alt}>
                 <a href="">
-                  <li key={link.alt}>
-                    <SocialIcon Icon={link.icon} alt={link.alt} />
-                  </li>
+                  <SocialIcon Icon={link.icon} alt={link.alt} key={link.alt} />
                 </a>
               </li>
             ))}

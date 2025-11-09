@@ -1,0 +1,22 @@
+.feature-section {
+  .features {
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem;
+    height: 80vh;
+    gap: 3rem 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    .button_2 {
+      display: none;
+    }
+  }
+
+  .hero {
+    height: 60vh;
+    .button_2 {
+      display: none;
+    }
+  }
+}

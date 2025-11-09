@@ -1,0 +1,25 @@
+@use "../../styles/mixins" as *;
+
+.bottomBanner {
+  background-image: url(../../assets//shared/desktop/bg-beta.jpg);
+  height: 25vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+
+  .bottomBanner__container {
+    width: 85%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    height: 100%
+  }
+
+  .bottomBanner__title {
+    @include h1-styling(var(--primary-pure-white));
+    width: 25%;
+    margin: auto 0;
+    height: fit-content;
+  }
+}
