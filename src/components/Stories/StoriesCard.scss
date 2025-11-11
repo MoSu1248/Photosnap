@@ -6,13 +6,32 @@
   width: 100%;
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
 
 .card {
   position: relative;
   color: var(--primary-pure-white);
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &::after {
+    content: "";
+    width: 0%;
+    height: 1%;
+    background: var(--primary-main-accent);
+    position: absolute;
+    bottom: 0;
+    transition: 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-30px);
+
+    &::after {
+      width: 100%;
+    }
+  }
 
   .card__img {
     position: absolute;

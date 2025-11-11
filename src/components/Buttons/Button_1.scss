@@ -1,0 +1,5 @@
+@use "../../styles/mixins" as *;
+
+.button_1 {
+  @include button-1;
+}

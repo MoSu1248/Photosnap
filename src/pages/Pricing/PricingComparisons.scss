@@ -1,0 +1,40 @@
+@use "../../styles/mixins" as *;
+
+.comparisons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 15vh 6vh;
+  .comparisons__header {
+    @include h1-styling;
+    text-transform: uppercase;
+  }
+}
+
+.comparisons__table {
+  width: 50%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 1.4rem;
+    text-align: center;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+    @include h4-styling;
+  }
+
+  th {
+    border-bottom: 1px solid var(--primary-black);
+  }
+
+  td {
+    border-bottom: 1px solid var(--primary-light-grey);
+  }
+}
