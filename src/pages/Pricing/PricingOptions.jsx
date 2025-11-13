@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./PricingOptions.scss";
 import Button_1 from "../../components/Buttons/Button_1";
+import { motion } from "motion/react";
 
 export default function PricingOptions() {
   const [billingCycle, setBillingCycle] = useState("monthly");
@@ -48,13 +49,23 @@ export default function PricingOptions() {
     },
   ];
 
-  const activePricing =
-    !toggled ? MonthlyPricing : YearlyPricing;
+  const activePricing = !toggled ? MonthlyPricing : YearlyPricing;
 
   return (
     <section className="">
-      <div className="toggle-container">
-        <span className={`${!toggled ? "active" : ""} monthly-header`}>Monthly</span>
+      <motion.div
+        className="toggle-container"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+        }}
+        transition={{ delay: 1, duration: 0.4 }}
+        viewport={{ amount: 0.9, once: true }}
+      >
+        <span className={`${!toggled ? "active" : ""} monthly-header`}>
+          Monthly
+        </span>
         <button
           className={`toggle-btn ${toggled ? "toggled" : ""}`}
           onClick={() => setToggled(!toggled)}
@@ -62,12 +73,21 @@ export default function PricingOptions() {
           <div className="thumb"></div>
         </button>
         <span className={`${toggled ? "active" : ""}`}>Yearly</span>
-      </div>
+      </motion.div>
       <div className="pricingOptions">
         {billingCycle && (
           <>
-            {activePricing.map((i) => (
-              <div className="pricingOptions__card-container">
+            {activePricing.map((i, index) => (
+              <motion.div
+                className="pricingOptions__card-container"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{
+                  scale: 1,
+                  opacity: 1,
+                }}
+                transition={{ delay: 0.1 * index, duration: 0.4 }}
+                viewport={{ amount: 0.8, once: true }}
+              >
                 <div className="pricingOptions__text-container">
                   <h2 className="pricingOptions__tier">{i.tier}</h2>
                   <p className="pricingOptions__feature">{i.feature}</p>
@@ -77,7 +97,7 @@ export default function PricingOptions() {
                   {billingCycle === "monthly" ? "per month" : "per year"}
                 </div>
                 <Button_1 text={"pick plan"} />
-              </div>
+              </motion.div>
             ))}
           </>
         )}

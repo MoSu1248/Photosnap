@@ -1,6 +1,7 @@
 import React from "react";
 import "./PricingComparisons.scss";
 import Check from "../../assets/pricing/desktop/check.svg?react";
+import { motion } from "motion/react";
 
 export default function PricingComparisons() {
   const features = [
@@ -31,7 +32,18 @@ export default function PricingComparisons() {
 
   return (
     <section className="comparisons">
-      <h1 className="comparisons__header">compare</h1>
+      <motion.h1
+        className="comparisons__header"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+        }}
+        transition={{ delay: 0.1, duration: 0.4 }}
+        viewport={{ amount: 1, once: true }}
+      >
+        compare
+      </motion.h1>
       <table className="comparisons__table">
         <thead>
           <tr>
@@ -43,12 +55,21 @@ export default function PricingComparisons() {
         </thead>
         <tbody>
           {features.map((item, index) => (
-            <tr key={index}>
+            <motion.tr
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{
+                scale: 1,
+                opacity: 1,
+              }}
+              transition={{ delay: 0.1 * index, duration: 0.4 }}
+              viewport={{ amount: 0.8, once: true }}
+            >
               <td>{item.title}</td>
               <td>{item.basic && <Check />}</td>
               <td>{item.pro && <Check />}</td>
               <td>{item.business && <Check />}</td>
-            </tr>
+            </motion.tr>
           ))}
         </tbody>
       </table>

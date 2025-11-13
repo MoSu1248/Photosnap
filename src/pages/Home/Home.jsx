@@ -36,13 +36,14 @@ export default function Home() {
       />
 
       <section className="cards cards-home">
-        {Stories.slice(0, 4).map((item) => (
+        {Stories.slice(0, 4).map((item, index) => (
           <StoryCard
             img={item.img}
             date={item.date}
             title={item.title}
             author={item.author}
-            key={item.title}
+            key={index}
+            index={index}
           />
         ))}
       </section>
@@ -55,6 +56,7 @@ export default function Home() {
             text={item.desc}
             key={index}
             item={index}
+            index={index}
           />
         ))}
       </section>

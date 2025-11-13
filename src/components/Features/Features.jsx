@@ -1,13 +1,28 @@
 import React from "react";
 import "./Features.scss";
-export default function Features({ img, title, text, item }) {
+import { motion } from "motion/react";
+
+export default function Features({ img, title, text, item, index }) {
   return (
-    <div className="features__container">
-      <img src={img} alt="" className={`features__img featured-${item}`} />
+    <motion.div
+      className="features__container"
+      initial={{ y: 40, opacity: 0 }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+      }}
+      transition={{ delay: 0.1 * index, duration: 0.4 }}
+      viewport={{ amount: 0.8, once: true }}
+    >
+      <motion.img
+        src={img}
+        alt=""
+        className={`features__img featured-${item}`}
+      />
       <div className="features__content">
-        <h4 className="features__title">{title}</h4>
-        <p className="features__text">{text}</p>
+        <motion.h4 className="features__title">{title}</motion.h4>
+        <motion.p className="features__text">{text}</motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 }

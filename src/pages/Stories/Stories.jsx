@@ -8,13 +8,14 @@ export default function Stories() {
   return (
     <div className="stories-section">
       <section className="cards cards-home">
-        {Storiess.map((item) => (
+        {Storiess.map((item, index) => (
           <StoriesCard
             img={item.img}
             date={item.date}
             title={item.title}
             author={item.author}
             key={item.title}
+            index={index} 
           />
         ))}
       </section>

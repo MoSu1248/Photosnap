@@ -23,6 +23,7 @@ export default function Features() {
             text={item.desc}
             key={index}
             item={index}
+            index={index}
           />
         ))}
       </section>
