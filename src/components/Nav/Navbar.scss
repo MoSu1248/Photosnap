@@ -7,6 +7,10 @@
     align-items: center;
     height: 100%;
 
+    @include for-mobile-up {
+      display: none;
+    }
+
     .nav__item {
       list-style: none;
     }
@@ -22,7 +26,7 @@
     }
   }
 
-  .link-home{
+  .link-home {
     display: none;
   }
 }

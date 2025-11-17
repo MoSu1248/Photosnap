@@ -79,6 +79,8 @@
   align-items: center;
   padding: 1rem 0rem;
 
+ 
+
   p {
     @include h4-styling(var(--primary-pure-white));
   }
@@ -87,5 +89,23 @@
     p {
       text-decoration: underline;
     }
+  }
+}
+
+@mixin for-desktop-up {
+  @media (max-width: vars.$bp-desktop) {
+    @content; // This allows you to inject whatever styles you want inside
+  }
+}
+
+@mixin for-tablet-up {
+  @media (max-width: vars.$bp-tablet) {
+    @content; // This allows you to inject whatever styles you want inside
+  }
+}
+
+@mixin for-mobile-up {
+  @media (max-width: vars.$bp-mobile) {
+    @content; // This allows you to inject whatever styles you want inside
   }
 }

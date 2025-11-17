@@ -12,14 +12,45 @@
     display: flex;
     gap: 10rem;
 
+    @include for-tablet-up {
+      width: 100%;
+      padding: 2rem 1rem;
+      justify-content: space-between;
+    }
+
+    @include for-mobile-up {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+    }
+
     .nav__list {
       display: flex;
       gap: 1rem;
       flex-direction: column;
       align-items: start;
+      margin: auto;
+
+      @include for-tablet-up {
+        flex-direction: row;
+        display: none;
+      }
+
+      @include for-mobile-up {
+        flex-direction: column;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 4rem;
+      }
 
       .nav__item {
         list-style: none;
+        @include for-mobile-up {
+          margin-top: 1rem;
+        }
       }
     }
 
@@ -42,7 +73,29 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .container__logo{
+  @include for-tablet-up {
+    justify-content: start;
+  }
+  @include for-mobile-up {
+    gap: 2rem;
+  }
+
+  .testNav > .nav__bar > .nav__list {
+    display: none;
+
+    @include for-tablet-up {
+      margin: 2rem 0 5rem 0;
+      flex-direction: row;
+      display: flex;
+    }
+
+    @include for-tablet-up {
+      flex-direction: row;
+      display: none;
+    }
+  }
+
+  .container__logo {
     color: var(--primary-pure-white);
   }
   .footer__socials-list {
@@ -64,9 +117,23 @@
     font-weight: var(--font-weight-regular);
   }
 
+  @include for-mobile-up {
+    margin: auto;
+  }
+
   .button_2 {
+    @include for-mobile-up {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
     p {
       margin: 0 1rem 0 auto;
+
+      @include for-mobile-up {
+        margin: 0;
+      }
     }
   }
 }

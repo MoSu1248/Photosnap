@@ -1,3 +1,5 @@
+@use "../../styles/mixins" as *;
+
 .feature-section {
   .features {
     display: grid;
@@ -8,6 +10,19 @@
     gap: 3rem 2rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    @include for-tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include for-mobile-up {
+      gap: 5rem 2rem;
+
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(auto, 1fr);
+    }
+
     .button_2 {
       display: none;
     }
@@ -15,6 +30,10 @@
 
   .hero {
     height: 60vh;
+
+    @include for-mobile-up {
+      height: 100vh;
+    }
     .button_2 {
       display: none;
     }

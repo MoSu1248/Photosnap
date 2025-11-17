@@ -10,6 +10,7 @@ import Instagram from "../../assets/shared/desktop/instagram.svg?react";
 import Button_2 from "../Buttons/Button_2";
 import Logo from "../../assets/shared/desktop/logo.svg?react";
 import SocialIcon from "../SocialIcon/SocialIcon";
+import { motion } from "motion/react";
 
 export default function Footer() {
   const socialIcons = [
@@ -21,12 +22,23 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="footer">
+    <motion.footer
+      className="footer"
+      initial={{ y: "100%" }}
+      whileInView={{ y: 0 }}
+      transition={{ delay: 0.1, duration: 0.4 }}
+      viewport={{ amount: 0.1 }}
+      exit={{ y: "100%" }}
+    >
       <div className="footer__container">
         <div className="footer__container-logo">
           <a href="/" className="container__logo">
             <Logo />
           </a>
+          <div className="testNav">
+            {" "}
+            <Navbar />
+          </div>
           <ul className="footer__socials-list">
             {socialIcons.map((link) => (
               <li key={link.alt}>
@@ -45,6 +57,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

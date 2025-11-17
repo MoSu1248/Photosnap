@@ -11,6 +11,10 @@
     padding: 1rem;
     margin: 0 auto;
 
+    @include for-tablet-up {
+      width: 100%;
+    }
+
     .nav__logo {
       display: flex;
       align-items: center;
@@ -20,4 +24,15 @@
 
 .nav__btn {
   @include button-1();
+
+  @include for-mobile-up {
+    display: none;
+  }
+}
+
+.mobile__menu-icon {
+  display: none;
+  @include for-mobile-up {
+    display: block;
+  }
 }

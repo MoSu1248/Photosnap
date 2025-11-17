@@ -1,6 +1,11 @@
+@use "../../styles/mixins" as *;
+
 .pricing-section {
   .hero {
     height: 60vh;
+    @include for-mobile-up {
+      height: 100vh;
+    }
 
     .button_2 {
       display: none;

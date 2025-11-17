@@ -17,6 +17,9 @@
 .comparisons__table {
   width: 50%;
   border-collapse: collapse;
+  @include for-tablet-up {
+    width: 100%;
+  }
 
   th,
   td {

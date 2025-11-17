@@ -91,12 +91,13 @@ export default function PricingOptions() {
                 <div className="pricingOptions__text-container">
                   <h2 className="pricingOptions__tier">{i.tier}</h2>
                   <p className="pricingOptions__feature">{i.feature}</p>
-                </div>
-                <div className="pricingOptions__bill-container">
-                  <h3 className="pricingOptions__price">{i.price}</h3>
-                  {billingCycle === "monthly" ? "per month" : "per year"}
-                </div>
+                  <div className="pricingOptions__bill-container">
+                    <h3 className="pricingOptions__price">{i.price}</h3>
+                    {billingCycle === "monthly" ? "per month" : "per year"}
+                  </div>
                 <Button_1 text={"pick plan"} />
+                </div>
+
               </motion.div>
             ))}
           </>

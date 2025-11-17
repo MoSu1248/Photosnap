@@ -2,8 +2,12 @@ import React from "react";
 import Button_2 from "../../components/Buttons/Button_2";
 import "./StoriesCard.scss";
 import { delay, motion } from "motion/react";
+import useWindowDimensions from "../WindowDimensions/WindowDimensions"; // Assuming the hook is in a separate file
 
 export default function StoriesCard({ img, title, author, date, index }) {
+  const { width } = useWindowDimensions();
+  const isMobile = width < 900; 
+
   return (
     <motion.div
       className="card"
@@ -15,7 +19,12 @@ export default function StoriesCard({ img, title, author, date, index }) {
       transition={{ delay: 0.1 * index, duration: 0.4 }}
       viewport={{ amount: 0.8, once: true }}
     >
-      <img src={img} alt="mountain-img" className="card__img" />
+      {isMobile ? (
+        <img src={img[1]} alt={`${title}-img`} className="card__img" />
+      ) : (
+        <img src={img[0]} alt={`${title}-img`} className="card__img" />
+      )}
+      <img src={img[0]} alt={`${title}-img`} className="card__img" />
       <div className="card__overlay"></div>
       <div className="card__content">
         <div className="card__text">

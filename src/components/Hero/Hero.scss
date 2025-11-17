@@ -5,22 +5,55 @@
   background-color: var(--primary-black);
   display: flex;
 
+  @include for-mobile-up {
+    flex-direction: column-reverse;
+    height: 100vh;
+  }
+
   .hero__background {
     height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     width: 60%;
+
+    @include for-mobile-up {
+      width: 100%;
+    }
   }
 
   .home-section {
     background-image: url(../../assets/home/desktop/create-and-share.jpg);
+
+    @include for-tablet-up {
+      background-image: url(../../assets/home/tablet/create-and-share.jpg);
+    }
+
+    @include for-mobile-up {
+      background-image: url(../../assets/home/mobile/create-and-share.jpg);
+    }
   }
 
   .features-section {
     background-image: url(../../assets/features/desktop/hero.jpg);
+
+    @include for-tablet-up {
+      background-image: url(../../assets/features/tablet/hero.jpg);
+    }
+
+    @include for-mobile-up {
+      background-image: url(../../assets/features/mobile/hero.jpg);
+    }
   }
   .pricing-section {
     background-image: url(../../assets/pricing/desktop/hero.jpg);
+
+    @include for-tablet-up {
+      background-image: url(../../assets/pricing/tablet/hero.jpg);
+    }
+
+    @include for-mobile-up {
+      background-image: url(../../assets/pricing/mobile/hero.jpg);
+    }
   }
 }
 
@@ -35,6 +68,15 @@
   text-align: left;
   gap: 2rem;
 
+  @include for-tablet-up {
+    width: 100%;
+    padding: 6rem;
+    height: 50%;
+  }
+
+  @include for-mobile-up {
+  }
+
   .hero__gradient {
     position: absolute;
     height: 60%;
@@ -42,6 +84,13 @@
     top: 20%;
     left: 0%;
     background: var(--primary-main-accent-softer);
+
+    @include for-mobile-up {
+      height: 1.5%;
+      width: 30%;
+      top: 0;
+      left: 10%
+    }
   }
 
   .hero__header {

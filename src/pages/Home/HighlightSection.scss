@@ -6,6 +6,12 @@
   display: flex;
   flex-direction: row-reverse;
 
+  @include for-mobile-up {
+    width: 100%;
+    flex-direction: column;
+    height: 100vh;
+  }
+
   .highlights__background {
     height: 100%;
     background-repeat: no-repeat;
@@ -15,11 +21,31 @@
   .highlight__1-img {
     width: 60%;
     background-image: url(../../assets/home/desktop/beautiful-stories.jpg);
+
+    @include for-tablet-up {
+      background-image: url(../../assets/home/tablet/beautiful-stories.jpg);
+      width: 30%;
+    }
+
+    @include for-mobile-up {
+      background-image: url(../../assets/home/mobile/beautiful-stories.jpg);
+
+      width: 100%;
+    }
   }
 
   .highlight__2-img {
     width: 60%;
     background-image: url(../../assets/home/desktop/designed-for-everyone.jpg);
+    @include for-tablet-up {
+      background-image: url(../../assets/home/tablet/designed-for-everyone.jpg);
+      width: 30%;
+    }
+    @include for-mobile-up {
+      background-image: url(../../assets/home/mobile/designed-for-everyone.jpg);
+
+      width: 100%;
+    }
   }
 }
 
@@ -33,6 +59,14 @@
   padding: 0 17rem 0 8rem;
   text-align: left;
   gap: 2rem;
+  @include for-tablet-up {
+    width: 70%;
+    padding: 6rem;
+  }
+
+  @include for-mobile-up {
+    width: 100%;
+  }
 
   .highlights__gradient {
     position: absolute;
@@ -67,4 +101,7 @@
 
 .highlight__2__content {
   flex-direction: row;
+  @include for-mobile-up {
+    flex-direction: column;
+  }
 }
