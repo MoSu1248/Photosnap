@@ -14,3 +14,7 @@ body {
   font-family: var(--default-font);
   line-height: 1.5;
 }
+
+.disabled {
+  overflow: hidden;
+}

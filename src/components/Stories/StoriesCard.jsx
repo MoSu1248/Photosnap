@@ -6,7 +6,7 @@ import useWindowDimensions from "../WindowDimensions/WindowDimensions"; // Assum
 
 export default function StoriesCard({ img, title, author, date, index }) {
   const { width } = useWindowDimensions();
-  const isMobile = width < 900; 
+  const isMobile = width < 900;
 
   return (
     <motion.div
@@ -16,8 +16,8 @@ export default function StoriesCard({ img, title, author, date, index }) {
         y: 0,
         opacity: 1,
       }}
-      transition={{ delay: 0.1 * index, duration: 0.4 }}
-      viewport={{ amount: 0.8, once: true }}
+      transition={{ delay: 0.1 * index, duration: 0.2 }}
+      viewport={{ amount: 0.5, once: true }}
     >
       {isMobile ? (
         <img src={img[1]} alt={`${title}-img`} className="card__img" />

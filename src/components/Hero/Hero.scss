@@ -7,7 +7,7 @@
 
   @include for-mobile-up {
     flex-direction: column-reverse;
-    height: 100vh;
+    height: 80vh;
   }
 
   .hero__background {
@@ -75,6 +75,7 @@
   }
 
   @include for-mobile-up {
+    padding: 3rem;
   }
 
   .hero__gradient {
@@ -89,7 +90,7 @@
       height: 1.5%;
       width: 30%;
       top: 0;
-      left: 10%
+      left: 10%;
     }
   }
 

@@ -1,0 +1,20 @@
+@use "../../styles/mixins" as *;
+
+.stories__background {
+  background-image: url(../../assets/stories/desktop/moon-of-appalacia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include for-mobile-up {
+    background-image: url(../../assets/stories/mobile/moon-of-appalacia.jpg);
+  }
+
+  .hero__content {
+    padding: 0 17rem 0 8rem;
+
+    @include for-mobile-up {
+      padding: 2rem;
+      height: 100%;
+    }
+  }
+}
