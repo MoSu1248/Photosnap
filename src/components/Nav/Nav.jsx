@@ -7,6 +7,8 @@ import menu from "../../assets/shared/mobile/menu.svg";
 import closeMenu from "../../assets/shared/mobile/close.svg";
 import MobileNav from "../MobileNav/MobileNav";
 import { AnimatePresence } from "motion/react";
+import { Link } from "react-router-dom";
+
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
