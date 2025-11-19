@@ -26,9 +26,9 @@ export default function Nav() {
       exit={{ y: "-80%" }}
     >
       <div className="nav__container">
-        <a href="/" className="nav__logo">
+        <Link to={"/"} className="nav__logo">
           <img src={logo} alt="Site Logo" />
-        </a>
+        </Link>
         <Navbar />
 
         {!open && (
