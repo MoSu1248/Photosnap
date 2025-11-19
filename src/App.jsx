@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home/Home";
 import Features from "./pages/Features/Features";
@@ -8,9 +8,10 @@ import Pricing from "./pages/Pricing/Pricing";
 import PageWrapper from "./components/PageWrapper/PageWrapper";
 import { AnimatePresence } from "motion/react";
 
+
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AnimatePresence>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -52,7 +53,7 @@ function App() {
           </Route>
         </Routes>
       </AnimatePresence>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
