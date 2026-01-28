@@ -68,10 +68,13 @@
   text-align: left;
   gap: 2rem;
 
+  @media (max-width: 1380px) {
+    padding: 6rem;
+  }
+
   @include for-tablet-up {
     width: 100%;
     padding: 6rem;
-    height: 50%;
   }
 
   @include for-mobile-up {
