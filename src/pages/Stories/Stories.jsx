@@ -1,6 +1,5 @@
 import React from "react";
 import "./Stories.scss";
-import BottomBanner from "../../components/BottomBanner/BottomBanner";
 import StoriesCard from "../../components/Stories/StoriesCard";
 import Storiess from "../../data/Stories";
 import StoriesHero from "./StoresHero";
@@ -23,3 +22,4 @@ export default function Stories() {
     </div>
   );
 }
+  

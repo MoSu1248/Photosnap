@@ -9,6 +9,21 @@ import StoryCard from "../../components/Stories/StoriesCard";
 import FeaturesData from "../../data/Features";
 
 export default function Home() {
+  const highlights = [
+    {
+      text: "We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone.",
+      title: "BEAUTIFUL STORIES EVERY TIME",
+      background: "highlight__1",
+      btnText: "VIEW THE STORIES",
+    },
+    {
+      text: "Photosnap can help you create stories that resonate with your audience.  Our tool is designed for photographers of all levels, brands, businesses you name it. ",
+      title: "DESIGNED FOR EVERYONE",
+      background: "highlight__2",
+      btnText: "VIEW THE STORIES",
+    },
+  ];
+
   return (
     <div className="home">
       <Hero
@@ -18,23 +33,15 @@ export default function Home() {
           "Photosnap is a platform for photographers and visual storytellers. We make it easy to share photos, tell stories and connect with others."
         }
       />
-      <HighlightSection
-        text={
-          "We provide design templates to ensure your stories look terrific. Easily add photos, text, embed maps and media from other networks. Then share your story with everyone."
-        }
-        title={"BEAUTIFUL STORIES EVERY TIME"}
-        buttontxt={"VIEW THE STORIES"}
-        background={"highlight__1"}
-      />
-      <HighlightSection
-        text={
-          "Photosnap can help you create stories that resonate with your audience.  Our tool is designed for photographers of all levels, brands, businesses you name it. "
-        }
-        title={"DESIGNED FOR EVERYONE"}
-        buttontxt={"VIEW THE STORIES"}
-        background={"highlight__2"}
-      />
-
+      {highlights.map((item, index) => (
+        <HighlightSection
+          key={index}
+          text={item.text}
+          title={item.title}
+          buttontxt={item.btnText}
+          background={item.background}
+        />
+      ))}
       <section className="cards cards-home">
         {Stories.slice(0, 4).map((item, index) => (
           <StoryCard
@@ -47,7 +54,6 @@ export default function Home() {
           />
         ))}
       </section>
-
       <section className="features">
         {FeaturesData.slice(0, 3).map((item, index) => (
           <Features

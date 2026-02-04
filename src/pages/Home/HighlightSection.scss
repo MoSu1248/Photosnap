@@ -59,6 +59,11 @@
   padding: 0 17rem 0 8rem;
   text-align: left;
   gap: 2rem;
+
+  @media (max-width: 1500px) {
+    padding: 3rem;
+  }
+
   @include for-tablet-up {
     width: 70%;
     padding: 6rem;
